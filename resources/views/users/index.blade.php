@@ -11,6 +11,11 @@
 
 <body class="p-5">
     <h1>Users</h1>
+    <form action="/" method="get">
+        <div class="mb-3">
+            <input type="text" name="search" id="search" class="form-control" value="{{ request()->input('search') }}">
+        </div>
+    </form>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -29,6 +34,9 @@
             @endforeach
         </tbody>
     </table>
+    <div>
+        {{ $users->links() }}
+    </div>
 </body>
 
 </html>
